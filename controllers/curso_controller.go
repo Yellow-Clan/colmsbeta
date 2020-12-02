@@ -10,11 +10,11 @@ import (
 )
 
 type ViewCurso struct {
-	Name    string
-	IsEdit  bool
-	Data    models.Curso
-	Widgets []models.Curso
-	Alumnos []models.Alumno
+	Name     string
+	IsEdit   bool
+	Data     models.Curso
+	Widgets  []models.Curso
+	Docentes []models.Docente
 }
 
 var tmplc = template.Must(template.New("foo").Funcs(cfig.FuncMap).ParseFiles("web/Header.tmpl", "web/Menu.tmpl", "web/Footer.tmpl", "web/curso/index.html", "web/curso/form.html"))
@@ -22,7 +22,7 @@ var tmplc = template.Must(template.New("foo").Funcs(cfig.FuncMap).ParseFiles("we
 func CursoList(w http.ResponseWriter, req *http.Request) {
 
 	lis := []models.Curso{}
-	if err := cfig.DB.Preload("Alumno").Find(&lis).Error; err != nil { // Preload("Alumno") carga los objetos Alumno relacionado
+	if err := cfig.DB.Preload("Docente").Find(&lis).Error; err != nil { // Preload("Alumno") carga los objetos Alumno relacionado
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
@@ -51,11 +51,12 @@ func CursoForm(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	alumno := models.Alumno{}
-	alumnos, _ := alumno.GetAll(cfig.DB) // para mostrar los alumnos en un combobox
+	docente := models.Docente{}
+	docentes, _ := docente.GetAll(cfig.DB) // para mostrar los alumnos en un combobox
 
 	if r.Method == "POST" {
 		log.Printf("POST id=: %v", id)
+		d.Curso = r.FormValue("curso")
 		d.Semestre = r.FormValue("semestre")
 		//n, err := strconv.Atoi(r.FormValue("alumno_id"))
 		//if err != nil {
@@ -64,7 +65,7 @@ func CursoForm(w http.ResponseWriter, r *http.Request) {
 		//	return
 		//}
 
-		d.AlumnoId = r.FormValue("alumno_id") //n
+		d.DocenteId = r.FormValue("docente_id") //n
 		if id != "" {
 			if err := cfig.DB.Save(&d).Error; err != nil {
 				http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -81,10 +82,10 @@ func CursoForm(w http.ResponseWriter, r *http.Request) {
 	}
 
 	data := ViewCurso{
-		Name:    "Curso",
-		Data:    d,
-		IsEdit:  IsEdit,
-		Alumnos: alumnos,
+		Name:     "Curso",
+		Data:     d,
+		IsEdit:   IsEdit,
+		Docentes: docentes,
 	}
 
 	err := tmplc.ExecuteTemplate(w, "curso/formPage", data)

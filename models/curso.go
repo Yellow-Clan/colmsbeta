@@ -8,10 +8,11 @@ import (
 )
 
 type Curso struct {
-	Id       string `gorm:"primary_key;"`
-	Semestre string
-	AlumnoId string `gorm:"size:191"`
-	Alumno   Alumno //`gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"` //`gorm:"embedded"` crea el compo nombres y codigo de alumnos
+	Id        string `gorm:"primary_key;"`
+	Curso     string
+	Semestre  string
+	DocenteId string  `gorm:"size:191"`
+	Docente   Docente //`gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"` //`gorm:"embedded"` crea el compo nombres y codigo de alumnos
 }
 
 func (tab Curso) ToString() string {

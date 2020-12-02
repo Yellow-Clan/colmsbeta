@@ -11,8 +11,9 @@
   <thead>
   <tr>
     <td>#</td>
+    <td>Curso</td>
     <td>Semestre</td>
-    <td>Alumno</td>
+    <td>Docente</td>
     <td>View</td>
     <td>Edit</td>
     <td>Delete</td>
@@ -22,8 +23,9 @@
   {{ range $i, $d := .Widgets  }}
     <tr>
       <td>{{ inc $i }} </td>
+      <td> {{ $d.Curso }} </td>
       <td> {{ $d.Semestre }} </td>
-      <td>{{ $d.Alumno.Nombres }} </td> 
+      <td>{{ $d.Docente.Nombres }} </td> 
       <td><a href="../curso/show?id={{ $d.Id }}">View</a></td>
       <td><a href="../curso/form?id={{ $d.Id }}">Edit</a></td>
       <td><a href="../curso/delete?id={{ $d.Id }}" onclick="return confirm('Are you sure?');">Delete</a></td>
