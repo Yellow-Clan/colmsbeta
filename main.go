@@ -21,7 +21,7 @@ func main() {
 	//http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 	//	fmt.Fprint(w, "Hello World!")
 	//})
-	cfig.DB, err = connectDB()
+	cfig.DB, err = connectDBmysql()
 	if err != nil {
 		panic("failed to connect database: " + err.Error())
 	}
@@ -30,6 +30,7 @@ func main() {
 	// Migrate the schema
 	cfig.DB.AutoMigrate(&models.Empleado{})
 	cfig.DB.AutoMigrate(&models.Alumno{})
+	cfig.DB.AutoMigrate(&models.Alumnocurso{})
 	cfig.DB.AutoMigrate(&models.Matricula{})
 	//cfig.DB.Create(&models.Empleado{Name: "Juan", City: "Juliaca"})
 
@@ -50,6 +51,10 @@ func main() {
 	r.HandleFunc("/matricula/form", controllers.MatriculaForm).Methods("GET", "POST")
 	r.HandleFunc("/matricula/delete", controllers.MatriculaDel).Methods("GET")
 
+	r.HandleFunc("/alumnocurso/index", controllers.AlumnocursoList).Methods("GET")
+	r.HandleFunc("/alumnocurso/form", controllers.AlumnocursoForm).Methods("GET", "POST")
+	r.HandleFunc("/alumnocurso/delete", controllers.AlumnocursoDel).Methods("GET")
+
 	//http.ListenAndServe(":80", r)
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -61,8 +66,8 @@ func main() {
 }
 
 func connectDBmysql() (c *gorm.DB, err error) {
-	dsn := "docker:docker@tcp(mysql-db:3306)/test_db?charset=utf8mb4&parseTime=True&loc=Local"
-	//dsn := "docker:docker@tcp(localhost:3306)/test_db?charset=utf8mb4&parseTime=True&loc=Local"
+	//dsn := "docker:docker@tcp(mysql-db:3306)/test_db?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "root:@tcp(localhost:3306)/test?charset=utf8mb4&parseTime=True&loc=Local"
 	conn, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
 	return conn, err
@@ -73,7 +78,7 @@ func connectDB() (c *gorm.DB, err error) {
 	//dsn := "docker:docker@tcp(localhost:3306)/test_db?charset=utf8mb4&parseTime=True&loc=Local"
 	//conn, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
-	dsn := "user=fcliujwibyxsdc password=a8b47332106e2c8ed9cdfdf4383d68f68f734790c714516102e201ec49e643d7 host=ec2-174-129-199-54.compute-1.amazonaws.com dbname=d35n7dqvk2ndfr port=5432 sslmode=require TimeZone=Asia/Shanghai"
+	dsn := "user=rdcrofkuaysjfd password=6b7d82e87153eaa84691f4fc26edc8fe38776c193fd8155d19cbcc6c031ac4b3 host=ec2-54-158-190-214.compute-1.amazonaws.com dbname=d83unplc9i729a port=5432 sslmode=require TimeZone=Asia/Shanghai"
 	//dsn := "user=postgres password=postgres2 dbname=users_test host=localhost port=5435 sslmode=disable TimeZone=Asia/Shanghai"
 	conn, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
