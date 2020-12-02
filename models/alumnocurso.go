@@ -10,7 +10,7 @@ import (
 type Alumnocurso struct {
 	Id string `gorm:"primary_key;"`
 	//Fecha  string
-	Nombre string
+	Semestre string
 	AlumnoId string `gorm:"size:191"`
 	Alumno   Alumno //`gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"` //`gorm:"embedded"` crea el compo nombres y codigo de alumnos
 }

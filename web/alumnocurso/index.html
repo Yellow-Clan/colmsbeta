@@ -6,13 +6,13 @@
 </div>
 
 <div class="table-container">
-  <a href="/alumnocurso/form">New alumnocurso</a>
+  <a href="/matricula/form">New curso</a>
   <table class="table">
   <thead>
   <tr>
     <td>#</td>
-    <td>Name</td>
-    <td>City</td>
+    <td>Semestre</td>
+    <td>Alumno</td>
     <td>View</td>
     <td>Edit</td>
     <td>Delete</td>
@@ -22,11 +22,11 @@
   {{ range $i, $d := .Widgets  }}
     <tr>
       <td>{{ inc $i }} </td>
-      <td> {{ $d.Nombres }} </td>
-      <td>{{ $d.Codigo }} </td> 
-      <td><a href="../alumnocurso/show?id={{ $d.Id }}">View</a></td>
-      <td><a href="../alumnocurso/form?id={{ $d.Id }}">Edit</a></td>
-      <td><a href="../alumnocurso/delete?id={{ $d.Id }}" onclick="return confirm('Are you sure?');">Delete</a></td>
+      <td> {{ $d.Semestre }} </td>
+      <td>{{ $d.Alumno.Nombres }} </td> 
+      <td><a href="../matricula/show?id={{ $d.Id }}">View</a></td>
+      <td><a href="../matricula/form?id={{ $d.Id }}">Edit</a></td>
+      <td><a href="../matricula/delete?id={{ $d.Id }}" onclick="return confirm('Are you sure?');">Delete</a></td>
     </tr>
   {{ end }}
    </tbody>
