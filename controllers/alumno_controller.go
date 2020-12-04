@@ -73,6 +73,8 @@ func AlumnoForm(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method == "POST" {
 		log.Printf("POST id=: %v", id)
+		d.ApellidoPaterno = r.FormValue("apellidopaterno")
+		d.ApellidoMaterno = r.FormValue("apellidomaterno")
 		d.Nombres = r.FormValue("nombres")
 		d.Codigo = r.FormValue("codigo")
 		if id != "" {
