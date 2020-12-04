@@ -11,8 +11,9 @@
   <thead>
   <tr>
     <td>#</td>
-    <td>Name</td>
-    <td>City</td>
+    <td>Nombres</td>
+    <td>Codigo</td>
+    <td>Email</td> 
     <td>View</td>
     <td>Edit</td>
     <td>Delete</td>
@@ -24,6 +25,7 @@
       <td>{{ inc $i }} </td>
       <td> {{ $d.Nombres }} </td>
       <td>{{ $d.Codigo }} </td> 
+      <td>{{ $d.Email }} </td> 
       <td><a href="../docente/show?id={{ $d.Id }}">View</a></td>
       <td><a href="../docente/form?id={{ $d.Id }}">Edit</a></td>
       <td><a href="../docente/delete?id={{ $d.Id }}" onclick="return confirm('Are you sure?');">Delete</a></td>

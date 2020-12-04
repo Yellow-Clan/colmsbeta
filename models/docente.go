@@ -11,6 +11,7 @@ type Docente struct {
 	Id      string `gorm:"primaryKey;"`
 	Nombres string
 	Codigo  string
+	Email   string `gorm:"type:varchar(100);unique_index"`
 	Cursos  []Curso
 }
 

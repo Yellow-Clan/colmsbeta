@@ -75,6 +75,7 @@ func DocenteForm(w http.ResponseWriter, r *http.Request) {
 		log.Printf("POST id=: %v", id)
 		d.Nombres = r.FormValue("nombres")
 		d.Codigo = r.FormValue("codigo")
+		d.Email = r.FormValue("email")
 		if id != "" {
 			if err := cfig.DB.Save(&d).Error; err != nil {
 				http.Error(w, err.Error(), http.StatusInternalServerError)
