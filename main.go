@@ -34,6 +34,8 @@ func main() {
 	cfig.DB.AutoMigrate(&models.Matricula{})
 	cfig.DB.AutoMigrate(&models.Curso{})
 	cfig.DB.AutoMigrate(&models.Docente{})
+	cfig.DB.AutoMigrate(&models.Administrador{})
+	cfig.DB.AutoMigrate(&models.Ingresoadmi{})
 
 	//cfig.DB.Create(&models.Empleado{Name: "Juan", City: "Juliaca"})
 
@@ -65,6 +67,14 @@ func main() {
 	r.HandleFunc("/docente/index", controllers.DocenteList).Methods("GET")
 	r.HandleFunc("/docente/form", controllers.DocenteForm).Methods("GET", "POST")
 	r.HandleFunc("/docente/delete", controllers.DocenteDel).Methods("GET")
+
+	r.HandleFunc("/administrador/index", controllers.AdministradorList).Methods("GET")
+	r.HandleFunc("/administrador/form", controllers.AdministradorForm).Methods("GET", "POST")
+	r.HandleFunc("/administrador/delete", controllers.AdministradorDel).Methods("GET")
+
+	r.HandleFunc("/ingresoadmi/index", controllers.IngresoadmiList).Methods("GET")
+	r.HandleFunc("/ingresoadmi/form", controllers.IngresoadmiForm).Methods("GET", "POST")
+	r.HandleFunc("/ingresoadmi/delete", controllers.IngresoadmiDel).Methods("GET")
 
 	//http.ListenAndServe(":80", r)
 	port := os.Getenv("PORT")
