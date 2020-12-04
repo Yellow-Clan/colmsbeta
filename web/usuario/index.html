@@ -6,16 +6,16 @@
 </div>
 
 <div class="table-container">
-  <a href="/usuario/form">NEW usuario</a>
+  <a href="/usuario/form">Agregar Usuario</a>
   <table class="table">
   <thead>
   <tr>
     <td>#</td>
-    <td>Name</td>
-    <td>City</td>
-    <td>View</td>
-    <td>Edit</td>
-    <td>Delete</td>
+    <td>Nombres</td>
+    <td>Rol</td>
+    <td>Ver</td>
+    <td>Editar</td>
+    <td>Eliminar</td>
   </tr>
    </thead>
    <tbody>
@@ -24,9 +24,9 @@
       <td>{{ inc $i }} </td>
       <td> {{ $d.Nombres }} </td>
       <td>{{ $d.Rol }} </td> 
-      <td><a href="../usuario/show?id={{ $d.Id }}">View</a></td>
-      <td><a href="../usuario/form?id={{ $d.Id }}">Edit</a></td>
-      <td><a href="../usuario/delete?id={{ $d.Id }}" onclick="return confirm('Are you sure?');">Delete</a></td>
+      <td><a href="../usuario/show?id={{ $d.Id }}">Ver</a></td>
+      <td><a href="../usuario/form?id={{ $d.Id }}">Editar</a></td>
+      <td><a href="../usuario/delete?id={{ $d.Id }}" onclick="return confirm('Estas seguro?');">Eliminar</a></td>
     </tr>
   {{ end }}
    </tbody>
@@ -35,7 +35,7 @@
 
 <script>
   function confirmToDelete(){
-    if(confirm('Are you sure?')) ;
+    if(confirm('Seguro que quieres eliminar?')) ;
   }
 </script>
 {{ template "Footer" }}
