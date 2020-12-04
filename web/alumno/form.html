@@ -12,6 +12,20 @@
 <form method="POST">
   <input type="hidden" name="id" value="{{ .Data.Id }}" />
   <div class="field">
+    <label class="label">ApellidoPaterno</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="ApellidoPaterno" name="apellidopaterno" value="{{ .Data.ApellidoPaterno }}" required>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">ApellidoMaterno</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="ApellidoMaterno" name="apellidomaterno" value="{{ .Data.ApellidoMaterno }}" required>
+    </div>
+  </div>
+
+  <div class="field">
     <label class="label">Nombres</label>
     <div class="control">
       <input class="input" type="text" placeholder="Nombres" name="nombres" value="{{ .Data.Nombres }}" required>

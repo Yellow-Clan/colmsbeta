@@ -11,6 +11,8 @@
   <thead>
   <tr>
     <td>#</td>
+    <td>last name</td>
+    <td>mother's last name</td>
     <td>Name</td>
     <td>City</td>
     <td>View</td>
@@ -22,6 +24,8 @@
   {{ range $i, $d := .Widgets  }}
     <tr>
       <td>{{ inc $i }} </td>
+      <td>{{$d.ApellidoPaterno}}</td>
+      <td>{{$d.ApellidoMaterno}}</td>
       <td> {{ $d.Nombres }} </td>
       <td>{{ $d.Codigo }} </td> 
       <td><a href="../alumno/show?id={{ $d.Id }}">View</a></td>

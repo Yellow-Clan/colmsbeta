@@ -55,8 +55,8 @@ func DocenteForm(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method == "POST" {
 		log.Printf("POST Id_docente=: %v", Id_docente)
-		d.Nombre = r.FormValue("nombre")
-		d.Curso_acargo = r.FormValue("curso_acargo")
+		d.Nombre = r.FormValue("Nombre")
+		d.Curso_acargo = r.FormValue("Curso_acargo")
 		if Id_docente != "" {
 			if err := cfig.DB.Save(&d).Error; err != nil {
 				http.Error(w, err.Error(), http.StatusInternalServerError)
