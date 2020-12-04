@@ -5,6 +5,8 @@ go 1.14
 
 require (
 	github.com/gorilla/mux v1.8.0
+	github.com/jinzhu/gorm v1.9.16
+	github.com/lib/pq v1.3.0
 	github.com/twinj/uuid v1.0.0
 	gorm.io/driver/mysql v1.0.3
 	gorm.io/driver/postgres v1.0.5

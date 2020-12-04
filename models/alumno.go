@@ -12,6 +12,7 @@ type Alumno struct {
 	Nombres    string
 	Codigo     string
 	Matriculas []Matricula
+	
 }
 
 func (tab Alumno) ToString() string {

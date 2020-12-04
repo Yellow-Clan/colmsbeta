@@ -12,7 +12,7 @@
   <tr>
     <td>#</td>
     <td>Semestre</td>
-    <td>Alumno</td>
+    <td>Administrador</td>
     <td>View</td>
     <td>Edit</td>
     <td>Delete</td>
@@ -23,7 +23,7 @@
     <tr>
       <td>{{ inc $i }} </td>
       <td> {{ $d.Semestre }} </td>
-      <td>{{ $d.Alumno.Nombres }} </td> 
+      <td>{{ $d.Administrador.Nombres }} </td> 
       <td><a href="../ingresoadmi/show?id={{ $d.Id }}">View</a></td>
       <td><a href="../ingresoadmi/form?id={{ $d.Id }}">Edit</a></td>
       <td><a href="../ingresoadmi/delete?id={{ $d.Id }}" onclick="return confirm('Are you sure?');">Delete</a></td>
