@@ -10,14 +10,19 @@
  
 
 <form method="POST">
-  <input type="hidden" nombre="id" value="{{ .Data.Id_docente }}" />
+  <input type="hidden" nombre="id_docente" value="{{ .Data.Id_docente }}" />
   <div class="field">
     <label class="label">Nombre</label>
     <div class="control">
-      <input class="input" type="text" placeholder="Nombre" nombre="nombre" value="{{ .Data.Nombre }}" required>
+      <input class="input" type="text" placeholder="nombre" nombre="Nombre" value="{{ .Data.Nombre }}" required>
     </div>
   </div>
-
+  <div class="field">
+    <label class="label">Curso_acargo</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="curso_acargo" nombre="Curso_acargo" value="{{ .Data.Curso_acargo }}" required>
+    </div>
+  </div>
   
   <div class="field is-grouped">
     <div class="control">

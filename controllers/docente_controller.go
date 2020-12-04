@@ -10,10 +10,10 @@ import (
 )
 
 type ViewDocente struct {
-	Nombre          string
-	IsEdit          bool
-	Data            models.Docente
-	WId_docentegets []models.Docente
+	Nombre  string
+	IsEdit  bool
+	Data    models.Docente
+	Widgets []models.Docente
 }
 
 var tmplu = template.Must(template.New("foo").Funcs(cfig.FuncMap).ParseFiles("web/Header.tmpl", "web/Menu.tmpl", "web/Footer.tmpl", "web/docente/index.html", "web/docente/form.html"))
@@ -28,8 +28,8 @@ func DocenteList(w http.ResponseWriter, req *http.Request) {
 	}
 	//log.Printf("lis: %v", lis)
 	data := ViewDocente{
-		Nombre:          "docente",
-		WId_docentegets: lis,
+		Nombre:  "Docente",
+		Widgets: lis,
 	}
 
 	err := tmplu.ExecuteTemplate(w, "docente/indexPage", data)
@@ -56,7 +56,7 @@ func DocenteForm(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
 		log.Printf("POST Id_docente=: %v", Id_docente)
 		d.Nombre = r.FormValue("nombre")
-
+		d.Curso_acargo = r.FormValue("curso_acargo")
 		if Id_docente != "" {
 			if err := cfig.DB.Save(&d).Error; err != nil {
 				http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -73,7 +73,7 @@ func DocenteForm(w http.ResponseWriter, r *http.Request) {
 	}
 
 	data := ViewDocente{
-		Nombre: "docente",
+		Nombre: "Docente",
 		Data:   d,
 		IsEdit: IsEdit,
 	}

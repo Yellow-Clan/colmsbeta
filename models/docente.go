@@ -15,7 +15,7 @@ func (tab *Docente) BeforeCreate(*gorm.DB) error {
 }
 
 type Docente struct {
-	Id_docente string `gorm:"primary_key;column:id"`
-
-	Nombre string
+	Id_docente   string `gorm:"primary_key;column:Id_docente"`
+	Nombre       string `gorm:"column:Nombre"`
+	Curso_acargo string `gorm:"column:Curso_acargo"`
 }

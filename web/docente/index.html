@@ -6,12 +6,13 @@
 </div>
 
 <div class="table-container">
-  <a href="/docente/form">NEW docente</a>
+  <a href="/docente/form">NEW Docente</a>
   <table class="table">
   <thead>
   <tr>
     <td>#</td>
     <td>Nombre</td>
+    <td>Curso_acargo</td>
     <td>View</td>
     <td>Edit</td>
     <td>Delete</td>
@@ -22,6 +23,7 @@
     <tr>
       <td>{{ inc $i }} </td>
       <td> {{ $d.Nombre }} </td>
+      <td>{{$d.Curso_acargo}}</td>
       <td><a href="../docente/show?id={{ $d.Id_docente }}">View</a></td>
       <td><a href="../docente/form?id={{ $d.Id_docente }}">Edit</a></td>
       <td><a href="../docente/delete?id={{ $d.Id_docente }}" onclick="return confirm('Are you sure?');">Delete</a></td>
