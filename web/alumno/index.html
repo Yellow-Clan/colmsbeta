@@ -2,30 +2,26 @@
 {{ template "Header" }}
 {{ template "Menu"  }}
 <div class="title">
-  Registered
+  Registered by {{ .UserId  }} 
 </div>
 
-<div class="table-container table-responsive">
+<div class="table-container">
   <a href="/alumno/form">NEW alumno</a>
   <table class="table">
   <thead>
   <tr>
     <td>#</td>
-    <td>Apellido Paterno</td>
-    <td>Apellido Materno</td>
-    <td>Nombres</td>
-    <td>Codigo-Alumno</td>
+    <td>Name</td>
+    <td>City</td>
     <td>View</td>
-    <td>Editar</td>
-    <td>Eliminar</td>
+    <td>Edit</td>
+    <td>Delete</td>
   </tr>
    </thead>
    <tbody>
   {{ range $i, $d := .Widgets  }}
     <tr>
       <td>{{ inc $i }} </td>
-      <td>{{$d.ApellidoPaterno}}</td>
-      <td>{{$d.ApellidoMaterno}}</td>
       <td> {{ $d.Nombres }} </td>
       <td>{{ $d.Codigo }} </td> 
       <td><a href="../alumno/show?id={{ $d.Id }}">View</a></td>
