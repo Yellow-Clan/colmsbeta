@@ -1,0 +1,46 @@
+{{define "usuario/indexPage"}}
+{{ template "Header" }}
+{{ template "Menu"  }}
+<div class="title">
+  Registro de usuarios
+
+</div>
+
+  <a class="btn btn-danger" href="/usuario/form">Agregar Usuario</a>
+
+<div class="table-container table-responsive overflow-auto" style="box-shadow: -7px 1rem 3rem 0px rgb(0 0 0 / 24%); border-radius: 12px; width: 100%; max-height: 400px" >
+
+  <table class="table table-hover bg-white"> 
+  <thead class="primary-color white-text font-weight-bold">
+  <tr>
+    <td><strong>Nº</strong></td>
+    <td><strong>Nombres</strong></td>
+    <td><strong>Rol</strong></td>
+    <td> </td>
+    <td> EDITAR </td>
+    <td> </td>
+  </tr>
+   </thead>
+   <tbody>
+  {{ range $i, $d := .Widgets  }}
+    <tr>
+      <td>{{ inc $i }} </td>
+      <td> {{ $d.Nombres }} </td>
+      <td>{{ $d.Rol }} </td> 
+      <td><a href="../usuario/show?id={{ $d.Id }}">Ver</a></td>
+      <td><a href="../usuario/form?id={{ $d.Id }}">Editar</a></td>
+      <td><a href="../usuario/delete?id={{ $d.Id }}" onclick="return confirm('Estas seguro?');">Eliminar</a></td>
+    </tr>
+  {{ end }}
+   </tbody>
+  </table>
+</div>
+
+<script>
+  function confirmToDelete(){
+    if(confirm('Seguro que quieres eliminar?')) ;
+  }
+</script>
+{{ template "Footer" }}
+{{end}}
+

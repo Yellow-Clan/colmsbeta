@@ -28,7 +28,12 @@ func RoutesMain(r *mux.Router) {
 	r.HandleFunc("/matricula/form", controllers.MatriculaForm).Methods("GET", "POST")
 	r.HandleFunc("/matricula/delete", controllers.MatriculaDel).Methods("GET")
 
+	r.HandleFunc("/alumnocurso/index", controllers.AlumnocursoList).Methods("GET")
+	r.HandleFunc("/alumnocurso/form", controllers.AlumnocursoForm).Methods("GET", "POST")
+	r.HandleFunc("/alumnocurso/delete", controllers.AlumnocursoDel).Methods("GET")
+
 	r.HandleFunc("/user/index", controllers.UserList).Methods("GET")
 	r.HandleFunc("/user/form", controllers.UserForm).Methods("GET", "POST")
 	r.HandleFunc("/user/delete", controllers.UserDel).Methods("GET")
+
 }

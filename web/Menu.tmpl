@@ -1,13 +1,21 @@
 {{ define "Menu" }}
-<a href="/">HOME</a> | 
-<a href="/login">LOGIN</a> | 
-<a href="/employee/index">Employee</a>| 
-<a href="/alumno/index">Alumno</a>| 
-<a href="/matricula/index">matricula</a>| 
 
-<a href="/user/index">user</a>| 
+<div class="text-center" stylesheet="">
 
 
-<br> 
-<a href="/logout">logout</a> <br> 
+<a href="/" class="btn btn-primary" role="button">HOME</a> 
+<a href="/login" class="btn btn-primary" role="button">login</a> 
+<a href="/employee/index" class="btn btn-primary" role="button">employee</a> 
+<a href="/alumno/index" class="btn btn-primary" role="button">alumno</a> 
+<a href="/matricula/index" class="btn btn-primary" role="button">Matricula</a> 
+<a href="/user/index" class="btn btn-primary" role="button">Usuarios</a>
+
+
+<a href="/logout" class="btn btn-danger" role="button">SALIR</a>
+
+
+</div>
+
+
+
 {{ end }}
