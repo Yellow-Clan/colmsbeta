@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"text/template"
@@ -15,13 +14,24 @@ type ViewAlumno struct {
 	IsEdit  bool
 	Data    models.Alumno
 	Widgets []models.Alumno
+	UserId  string
 }
 
-var tmpla = template.Must(template.New("foo").Funcs(cfig.FuncMap).ParseFiles("web/Header.tmpl", "web/Menu.tmpl", "web/Footer.tmpl", "web/alumno/index.html", "web/alumno/form.html"))
+var tmpla = template.Must(template.New("foo").Funcs(cfig.FuncMap).
+	ParseFiles("web/Header.tmpl", "web/Menu.tmpl", "web/Footer.tmpl",
+		"web/alumno/index.html", "web/alumno/form.html"))
 
 func AlumnoList(w http.ResponseWriter, req *http.Request) {
 
-	alumno := models.Alumno{}
+	session, _ := store.Get(req, "cookie-name")
+	/*
+		// Check if user is authenticated
+		if auth, ok := session.Values["authenticated"].(bool); !ok || !auth {
+			http.Error(w, "Forbidden", http.StatusForbidden)
+			return
+		}*/
+
+	/*alumno := models.Alumno{}
 
 	alumnos, _ := alumno.FindAll(cfig.DB)
 
@@ -35,7 +45,7 @@ func AlumnoList(w http.ResponseWriter, req *http.Request) {
 			}
 		}
 		fmt.Println("--------------------")
-	}
+	}*/
 
 	// Create
 	//cfig.DB.Create(&models.Alumno{Name: "Juan", City: "Juliaca"})
@@ -48,6 +58,7 @@ func AlumnoList(w http.ResponseWriter, req *http.Request) {
 	data := ViewAlumno{
 		Name:    "Alumno",
 		Widgets: lis,
+		UserId:  session.Values["user_id"].(string),
 	}
 
 	err := tmpla.ExecuteTemplate(w, "alumno/indexPage", data)
@@ -73,8 +84,6 @@ func AlumnoForm(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method == "POST" {
 		log.Printf("POST id=: %v", id)
-		d.ApellidoPaterno = r.FormValue("apellidopaterno")
-		d.ApellidoMaterno = r.FormValue("apellidomaterno")
 		d.Nombres = r.FormValue("nombres")
 		d.Codigo = r.FormValue("codigo")
 		if id != "" {

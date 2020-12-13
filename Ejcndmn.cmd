@@ -1,0 +1,1 @@
+ start http://localhost:8080/ && nodemon --exec go run main.go --signal SIGTERM

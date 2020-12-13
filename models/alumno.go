@@ -8,12 +8,10 @@ import (
 )
 
 type Alumno struct {
-	Id              string `gorm:"primaryKey;"`
-	ApellidoPaterno string
-	ApellidoMaterno string
-	Nombres         string
-	Codigo          string
-	Matriculas      []Matricula
+	Id         string `gorm:"primaryKey;"`
+	Nombres    string
+	Codigo     string
+	Matriculas []Matricula
 }
 
 func (tab Alumno) ToString() string {
