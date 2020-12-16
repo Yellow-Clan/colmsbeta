@@ -9,7 +9,7 @@ import (
 
 type Usuario struct {
 	Id       string `gorm:"primary_key;"`
-	Usuario  string
+	Nombre_Usuario  string
 	Semestre string
 	RolId    string `gorm:"size:191"`
 	Rol      Rol    //`gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"` //`gorm:"embedded"` crea el compo nombres y codigo de alumnos

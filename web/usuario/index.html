@@ -11,9 +11,9 @@
   <thead>
   <tr>
     <td>#</td>
-    <td>usuario</td>
+    <td>Usuario</td>
     <td>Semestre</td>
-    <td>Docente</td>
+    <td>Rol</td>
     <td>View</td>
     <td>Edit</td>
     <td>Delete</td>
@@ -23,7 +23,7 @@
   {{ range $i, $d := .Widgets  }}
     <tr>
       <td>{{ inc $i }} </td>
-      <td> {{ $d.usuario }} </td>
+      <td> {{ $d.Nombre_Usuario }} </td>
       <td> {{ $d.Semestre }} </td>
       <td>{{ $d.Rol.Nombres }} </td> 
       <td><a href="../usuario/show?id={{ $d.Id }}">View</a></td>

@@ -17,7 +17,7 @@ type ViewUsuario struct {
 	Roles   []models.Rol
 }
 
-var tmplc = template.Must(template.New("foo").Funcs(cfig.FuncMap).ParseFiles("web/Header.tmpl", "web/Menu.tmpl", "web/Footer.tmpl", "web/usuario/index.html", "web/usuario/form.html"))
+var tmplus = template.Must(template.New("foo").Funcs(cfig.FuncMap).ParseFiles("web/Header.tmpl", "web/Menu.tmpl", "web/Footer.tmpl", "web/usuario/index.html", "web/usuario/form.html"))
 
 func UsuarioList(w http.ResponseWriter, req *http.Request) {
 
@@ -30,7 +30,7 @@ func UsuarioList(w http.ResponseWriter, req *http.Request) {
 		Name:    "Usuario",
 		Widgets: lis,
 	}
-	err := tmplc.ExecuteTemplate(w, "usuario/indexPage", data)
+	err := tmplus.ExecuteTemplate(w, "usuario/indexPage", data)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -56,7 +56,7 @@ func UsuarioForm(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method == "POST" {
 		log.Printf("POST id=: %v", id)
-		d.Usuario = r.FormValue("Usuario")
+		d.Nombre_Usuario = r.FormValue("Usuario")
 		d.Semestre = r.FormValue("semestre")
 		//n, err := strconv.Atoi(r.FormValue("alumno_id"))
 		//if err != nil {
@@ -88,7 +88,7 @@ func UsuarioForm(w http.ResponseWriter, r *http.Request) {
 		Roles:  roles,
 	}
 
-	err := tmplc.ExecuteTemplate(w, "usuario/formPage", data)
+	err := tmplus.ExecuteTemplate(w, "usuario/formPage", data)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return

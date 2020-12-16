@@ -11,9 +11,9 @@
  <form method="POST">
   <input type="hidden" name="id" value="{{ .Data.Id }}" />
   <div class="field">
-    <label class="label">usuario</label>
-    <div class="control">
-      <input class="input" type="text" placeholder="usuario" name="usuario" value="{{ .Data.usuario }}" required>
+    <label class="label">Usuario</label>
+    <div class="contusuario">
+      <input class="input" type="text" placeholder="Usuario" name="usuario" value="{{ .Data.Nombre_Usuario }}" required>
     </div>
   </div>
 
@@ -21,26 +21,26 @@
   <input type="hidden" name="id" value="{{ .Data.Id }}" />
   <div class="field">
     <label class="label">Semestre</label>
-    <div class="control">
+    <div class="contusuario">
       <input class="input" type="text" placeholder="Semestre" name="semestre" value="{{ .Data.Semestre }}" required>
     </div>
   </div>
 
   <div class="field">
-    <label class="label">Docente  </label>
+    <label class="label">Alumno  </label>
     <div class="control">
       <div class="select">
-        <select name="rol_id"> // for loop in html template example
-          {{range $key, $value := .Docentes}}
+        <select name="rol_id" required> // for loop in html template example
+          <option  value="" >Elija un Rol</option>
+          {{range $key, $value := .Roles}}
             <option value="{{ $value.Id }}" {{if eq $value.Id $.Data.RolId }}selected="selected"{{end}}>{{ $value.Nombres }}</option>
           {{end}}
         </select>
       </div>
     </div>
   </div>
-
   <div class="field is-grouped">
-    <div class="control">
+    <div class="contusuario">
       <input type="submit" value="Save " class="button is-primary"/>
     </div>
     
