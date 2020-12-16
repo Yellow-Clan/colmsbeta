@@ -2,33 +2,46 @@
 
 {{ template "Header" }}
 {{ template "Menu" }} 
-<!-- {{ . }} -->
+{{ .Data.Id  }}
 
 <div class="title">
-  {{if .IsEdit }}Update{{else}}Crear Nuevo USUARIO{{end}}
+  {{if .IsEdit }}Update{{else}}Create{{end}} 
 </div>
  
-
-<form method="POST" class="mt-4 ml-5">
+ <form method="POST">
   <input type="hidden" name="id" value="{{ .Data.Id }}" />
   <div class="field">
-    <label class="label">Nombres</label>
+    <label class="label">usuario</label>
     <div class="control">
-      <input class="form-control" type="text" placeholder="Nombres completos" name="nombres" value="{{ .Data.Nombres }}" required>
+      <input class="input" type="text" placeholder="usuario" name="usuario" value="{{ .Data.usuario }}" required>
     </div>
   </div>
 
-  <div class="field mt-4">
-    <label class="label">Rol</label>
+<form method="POST">
+  <input type="hidden" name="id" value="{{ .Data.Id }}" />
+  <div class="field">
+    <label class="label">Semestre</label>
     <div class="control">
-      <input class="form-control" type="text" placeholder="Que rol cumple" name="rol" value="{{ .Data.Rol }}">
+      <input class="input" type="text" placeholder="Semestre" name="semestre" value="{{ .Data.Semestre }}" required>
     </div>
   </div>
+
+  <div class="field">
+    <label class="label">Docente  </label>
+    <div class="control">
+      <div class="select">
+        <select name="rol_id"> // for loop in html template example
+          {{range $key, $value := .Docentes}}
+            <option value="{{ $value.Id }}" {{if eq $value.Id $.Data.RolId }}selected="selected"{{end}}>{{ $value.Nombres }}</option>
+          {{end}}
+        </select>
+      </div>
+    </div>
+  </div>
+
   <div class="field is-grouped">
-    <div class="control mt-3">
-      <button type="submit" value="Save user" class="btn btn-success">Guardar</button>
-      
-</div>
+    <div class="control">
+      <input type="submit" value="Save " class="button is-primary"/>
     </div>
     
   </div>

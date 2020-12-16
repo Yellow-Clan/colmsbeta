@@ -1,4 +1,4 @@
-{{define "usuario/indexPage"}}
+{{define "rol/indexPage"}}
 {{ template "Header" }}
 {{ template "Menu"  }}
 <div class="title">
@@ -6,14 +6,14 @@
 </div>
 
 <div class="table-container">
-  <a href="/usuario/form">New Usuario</a>
+  <a href="/rol/form">Agregar Rol</a>
   <table class="table">
   <thead>
   <tr>
     <td>#</td>
-    <td>usuario</td>
-    <td>Semestre</td>
-    <td>Docente</td>
+    <td>Nombres</td>
+    <td>Codigo</td>
+    <td>Email</td> 
     <td>View</td>
     <td>Edit</td>
     <td>Delete</td>
@@ -23,12 +23,12 @@
   {{ range $i, $d := .Widgets  }}
     <tr>
       <td>{{ inc $i }} </td>
-      <td> {{ $d.usuario }} </td>
-      <td> {{ $d.Semestre }} </td>
-      <td>{{ $d.Rol.Nombres }} </td> 
-      <td><a href="../usuario/show?id={{ $d.Id }}">View</a></td>
-      <td><a href="../usuario/form?id={{ $d.Id }}">Edit</a></td>
-      <td><a href="../usuario/delete?id={{ $d.Id }}" onclick="return confirm('Are you sure?');">Delete</a></td>
+      <td> {{ $d.Nombres }} </td>
+      <td>{{ $d.Codigo }} </td> 
+      <td>{{ $d.Email }} </td> 
+      <td><a href="../rol/show?id={{ $d.Id }}">View</a></td>
+      <td><a href="../rol/form?id={{ $d.Id }}">Edit</a></td>
+      <td><a href="../rol/delete?id={{ $d.Id }}" onclick="return confirm('Are you sure?');">Delete</a></td>
     </tr>
   {{ end }}
    </tbody>
