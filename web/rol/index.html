@@ -6,14 +6,14 @@
 </div>
 
 <div class="table-container">
-  <a href="/rol/form">Agregar rol</a>
+  <a href="/rol/form">Agregar Rol</a>
   <table class="table">
   <thead>
   <tr>
     <td>#</td>
-    <td>Nombres</td>
+    <td>Rol</td>
     <td>Codigo</td>
-    <td>Email</td> 
+
     <td>View</td>
     <td>Edit</td>
     <td>Delete</td>
@@ -25,7 +25,7 @@
       <td>{{ inc $i }} </td>
       <td> {{ $d.Nombres }} </td>
       <td>{{ $d.Codigo }} </td> 
-      <td>{{ $d.Email }} </td> 
+
       <td><a href="../rol/show?id={{ $d.Id }}">View</a></td>
       <td><a href="../rol/form?id={{ $d.Id }}">Edit</a></td>
       <td><a href="../rol/delete?id={{ $d.Id }}" onclick="return confirm('Are you sure?');">Delete</a></td>

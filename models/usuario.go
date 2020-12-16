@@ -8,11 +8,12 @@ import (
 )
 
 type Usuario struct {
-	Id       string `gorm:"primary_key;"`
-	Nombre_Usuario  string
-	Semestre string
-	RolId    string `gorm:"size:191"`
-	Rol      Rol    //`gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"` //`gorm:"embedded"` crea el compo nombres y codigo de alumnos
+	Id             string `gorm:"primary_key;"`
+	Nombre_Usuario string
+	Email          string `gorm:"type:varchar(100);unique_index"`
+	Semestre       string
+	RolId          string `gorm:"size:191"`
+	Rol            Rol    //`gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"` //`gorm:"embedded"` crea el compo nombres y codigo de alumnos
 }
 
 func (tab Usuario) ToString() string {

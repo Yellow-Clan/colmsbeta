@@ -56,7 +56,8 @@ func UsuarioForm(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method == "POST" {
 		log.Printf("POST id=: %v", id)
-		d.Nombre_Usuario = r.FormValue("Usuario")
+		d.Nombre_Usuario = r.FormValue("usuario")
+		d.Email = r.FormValue("email")
 		d.Semestre = r.FormValue("semestre")
 		//n, err := strconv.Atoi(r.FormValue("alumno_id"))
 		//if err != nil {

@@ -17,6 +17,15 @@
     </div>
   </div>
 
+  <form method="POST">
+  <input type="hidden" name="id" value="{{ .Data.Id }}" />
+  <div class="field">
+    <label class="label">Email</label>
+    <div class="contusuario">
+      <input class="input" type="text" placeholder="Email" name="email" value="{{ .Data.Email }}" required>
+    </div>
+  </div>
+
 <form method="POST">
   <input type="hidden" name="id" value="{{ .Data.Id }}" />
   <div class="field">
@@ -27,11 +36,11 @@
   </div>
 
   <div class="field">
-    <label class="label">Alumno  </label>
+    <label class="label">Rol  </label>
     <div class="control">
       <div class="select">
         <select name="rol_id" required> // for loop in html template example
-          <option  value="" >Elija un Rol</option>
+          <option  value="" >Elija Un Rol</option>
           {{range $key, $value := .Roles}}
             <option value="{{ $value.Id }}" {{if eq $value.Id $.Data.RolId }}selected="selected"{{end}}>{{ $value.Nombres }}</option>
           {{end}}

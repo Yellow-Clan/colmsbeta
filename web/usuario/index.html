@@ -12,6 +12,7 @@
   <tr>
     <td>#</td>
     <td>Usuario</td>
+    <td>Email</td>
     <td>Semestre</td>
     <td>Rol</td>
     <td>View</td>
@@ -24,6 +25,7 @@
     <tr>
       <td>{{ inc $i }} </td>
       <td> {{ $d.Nombre_Usuario }} </td>
+      <td> {{ $d.Email }} </td>
       <td> {{ $d.Semestre }} </td>
       <td>{{ $d.Rol.Nombres }} </td> 
       <td><a href="../usuario/show?id={{ $d.Id }}">View</a></td>
