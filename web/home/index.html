@@ -1,32 +1,149 @@
 {{define "home/indexPage"}}
-    {{ template "Header" }}
-    {{ template "Menu"  }}
-    <!-- Card -->
-<div class="card">
+<!DOCTYPE html>
+<html lang="es">
 
-  <!-- Card image -->
-  <div class="view overlay">
-    <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
-      alt="Card image cap">
-    <a href="#!">
-      <div class="mask rgba-white-slight"></div>
-    </a>
-  </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>GoLMS</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/2.2.1/mdb.min.css" rel="stylesheet" />
+</head>
 
-  <!-- Card content -->
-  <div class="card-body">
+<body class=" justify-content-center align-items-center vh-100 " style="background-color: #EDECEC;">
+    <div class="container-fluid ">
+        <div class="row py-3">
+            
+            <div id="A columna-primaria" class="col-md-5 offset-md-1" style="background:#ffffff42; opacity:96%;">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title text-center"><b>ESTADO</b></h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+                <div class="card mt-3"> <img class="card-img-top" src="https://static.pingendo.com/cover-moon.svg" alt="Card image cap" height="170">
+                    <div class="card-body">
+                        <h4 class="card-title text-center"><b>CLASES</b></h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> <a href="#" class="btn btn-primary btn-lg">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card mt-3"> <img class="card-img-top" src="https://static.pingendo.com/cover-moon.svg" alt="Card image cap" height="170">
+                    <div class="card-body">
+                        <h4 class="card-title text-center"><b>TAREAS PENDIENTES</b></h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div id="B columna-segundaria" class="col-md-4" style="background:#ffffff42; opacity:95%;">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" data-target="#tabone"><b>NOTICIAS</b></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="" data-toggle="tab" data-target="#tabtwo">N2</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" data-toggle="tab" data-target="#tabthree">N3</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="tab-content mt-2">
+                            <div class="tab-pane fade show active" id="tabone" role="tabpanel">
+                                <p class="">When I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms.</p>
+                            </div>
+                            <div class="tab-pane fade" id="tabtwo" role="tabpanel">
+                                <p class="">Who formed us in his own image, and the breath of that universal love which bears and sustains us. And then, my friend.</p>
+                            </div>
+                            <div class="tab-pane fade" id="tabthree" role="tabpanel">
+                                <p class="">In my soul and absorb its power, like the form of a beloved mistress, then I often think with longing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <img class="card-img-top" src="https://static.pingendo.com/cover-moon.svg" alt="Card image cap">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item text-center"><b>RENDIMIENTO</b></li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                </div>
+                <div class="card text-white bg-dark mb-2 mt-2">
+                    <div class="card-header text-center"><b>PUNTOS</b></div>
+                    <div class="card-body">
+                        <h5 class="card-title">Dark card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="C nav" class="col-1 ml-3 mt-md-1 mt-lg-4 mt-xl-5 px-sm-1 px-md-2 px-lg-3 px-xl-4 d-none d-md-block align-items-center" id="sticky-sidebar ">
+                <style type="text/css">
+                .sticky-top {
+                    top: 20px;
+                }
+                </style>
+                <div class="sticky-top mt-md-1 ">
+                    <div class=" flex-column bg-primary py-1" style="margin-left:auto; margin-right:auto; font-size: 80%; border-radius: 20px; box-shadow: -10px 14px 15px rgba(0,0,0,0.5);">
+                        <ul class="nav list-group fa-2x  my-md-2 my-lg-4 my-xl-5" style="text-align:center;">
 
-    <!-- Title -->
-    <h4 class="card-title">Card title</h4>
-    <!-- Text -->
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-      content.</p>
-    <!-- Button -->
-    <a href="#" class="btn btn-primary">Button</a>
 
-  </div>
+                            <li class="nav-item btn mb-4 " style="box-shadow: none;"> <a href="#" class=""><img class="imagen" width="35" heigth="35" src="https://lh3.googleusercontent.com/-uJ5cwB9OVt0/X80cTH4WfrI/AAAAAAAAAXA/4EXJhNOMFY4kFTfB6LyYxG373sgtvSdIwCNcBGAsYHQ/w945-h600-p-k-no-nu/wmmm%2Blogo.png"></a> </li>
+                            <li class="nav-item btn my-md-0 my-lg-1 my-xl-2" style="box-shadow: none;"> <a href="#" class=""><i class="fas fa-tachometer-alt text-white text-center fa-2x" style="color:#FFFFFF; width:6; height:6;"></i></a> </li>
 
-</div>
-<!-- Card -->
-    {{ template "Footer" }}
+                            <li class="nav-item btn my-md-0 my-lg-1 my-xl-2" style="box-shadow: none;"> <a href="#" class=""><i class="fa fa-plus text-white text-center fa-2x" style="color:#FFFFFF; width:6; height:6;"></i></a> </li>
+
+                            <li class="nav-item btn my-md-0 my-lg-1 my-xl-2" style="box-shadow: none;" > <a href="#" class=""><i class="fa fa-user text-white text-center fa-2x" style="color:#FFFFFF; width:6; height:6;"></i></a> </li>
+                            <li class="nav-item btn my-md-0 my-lg-1 my-xl-2" style="box-shadow: none;"> <a href="#" class=""><i class="fa fa-comments text-white text-center fa-2x" style="color:#FFFFFF; width:6; height:6;"></i></a> </li>
+                            <li class="nav-item btn my-md-0 my-lg-1 my-xl-2" style="box-shadow: none;"> <a href="#" class=""><i class="fa fa-cog text-white text-center fa-2x" style="color:#FFFFFF; width:6; height:6;"></i></a> </li>
+                            <li class="nav-item btn mt-4" style="box-shadow: none;"> <a href="#" class=""><i class="fas fa-sign-out-alt text-white text-center fa-2x" style="color:#FFFFFF; width:6; height:6;"></i></a> </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            
+
+<div id="D nav-bar-mobile" class="containernav d-md-none d-lg-none d-xl-none fixed-bottom">
+           <input type="checkbox" id="btn-mas">
+            <div class="redes">
+
+            <a href="#" class="fa fa-tachometer"></a>
+            <a href="#" class="fa fa-comments"></a>
+            <a href="#" class="fa fa-cog"></a>
+            <a href="#" class="fa fa-sign-out"></a>
+            
+
+           
+
+          </div>
+          <div class="btn-mas">
+            <label for="btn-mas" class="icon-mas2">
+            <b>+</b></label>
+        </div>
+    </div>
+            
+
+
+        </div>
+
+    </div>
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/2.2.1/mdb.min.js"
+></script>
+</body>
+
+</html>
 {{end}}
