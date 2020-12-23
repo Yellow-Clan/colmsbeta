@@ -30,8 +30,8 @@ func main() {
 	// Migrate the schema
 	cfig.DB.AutoMigrate(&models.Empleado{})
 	cfig.DB.AutoMigrate(&models.Alumno{})
-
 	cfig.DB.AutoMigrate(&models.Matricula{})
+	cfig.DB.AutoMigrate(&models.Nivel{})
 
 	//cfig.DB.Create(&models.Empleado{Name: "Juan", City: "Juliaca"})
 
@@ -51,6 +51,10 @@ func main() {
 	r.HandleFunc("/matricula/index", controllers.MatriculaList).Methods("GET")
 	r.HandleFunc("/matricula/form", controllers.MatriculaForm).Methods("GET", "POST")
 	r.HandleFunc("/matricula/delete", controllers.MatriculaDel).Methods("GET")
+
+	r.HandleFunc("/nivel/index", controllers.NivelList).Methods("GET")
+	r.HandleFunc("/nivel/form", controllers.NivelForm).Methods("GET", "POST")
+	r.HandleFunc("/nivel/delete", controllers.NivelDel).Methods("GET")
 
 	//http.ListenAndServe(":80", r)
 	port := os.Getenv("PORT")
