@@ -174,5 +174,5 @@ func UserLogout(w http.ResponseWriter, r *http.Request) {
 	session.Values["authenticated"] = false
 	session.Values["user_id"] = ""
 	session.Save(r, w)
-	fmt.Fprintln(w, "gracias! hasta pronto <a href="/"> </a>")
+	fmt.Fprintln(w, "gracias! hasta pronto")
 }
