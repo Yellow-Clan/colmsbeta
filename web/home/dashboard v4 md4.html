@@ -1,0 +1,190 @@
+{{define "home/indexPage"}}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>GoLMS</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <!-- Your custom styles (optional) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+    <style>
+    /* width */
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+
+        background-color: #E2E2E2;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #4F9FF6;
+        border-radius: 15px;
+        opacity: 30%;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #1583F8;
+        opacity: 100%;
+
+    }
+    </style>
+</head>
+
+
+<body class=" justify-content-center align-items-center vh-100 " style="background-color: #EDECEC;">
+    <div class="container-fluid ">
+        <div class="row py-3">
+            <div id="side column" class="col-md-1 offset-md-3 ">
+            </div>
+
+            <div id="MAIN column" class="col-md-5">
+                <div class="card mt-5">
+                    <div class="container p-5">
+                        <div class="row p-5">
+                            
+
+                                <a href="/employee/index" class="btn btn-primary btn-block" role="button">employee</a> 
+                                <a href="/alumno/index" class="btn btn-primary btn-block" role="button">alumno</a> 
+                                <a href="/matricula/index" class="btn btn-primary btn-block" role="button">Matricula</a> 
+                                <a href="/user/index" class="btn btn-primary btn-block" role="button">Usuarios</a>
+
+
+                                <a href="/logout" class="btn btn-danger btn-block" role="button">SALIR</a>
+                                
+
+
+                                
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="C nav" class="col-1 ml-3 align-items-center mt-md-0 mt-lg-4 mt-xl-5 px-md-0 px-lg-1 px-xl-3 d-none d-md-block" id="sticky-sidebar">
+                <style type="text/css">
+                .sticky-top {
+                    top: 20px;
+                }
+                </style>
+                <div class="sticky-top mt-md-1 ">
+                    <div class=" flex-column bg-primary py-1" style="margin-left:auto; margin-right:auto; font-size: 80%; border-radius: 20px; box-shadow: -10px 14px 15px rgba(0,0,0,0.5);">
+                        <ul class="nav list-group fa-2x  my-md-0 my-lg-2 my-xl-3" style="text-align:center;">
+                            <li class="nav-item mb-4 "> <a href="#" class=""><img class="imagen" width="35" heigth="35" src="https://lh3.googleusercontent.com/-uJ5cwB9OVt0/X80cTH4WfrI/AAAAAAAAAXA/4EXJhNOMFY4kFTfB6LyYxG373sgtvSdIwCNcBGAsYHQ/w945-h600-p-k-no-nu/wmmm%2Blogo.png"></a> </li>
+                            <li class="nav-item my-md-0 my-lg-1 my-xl-2"> <a href="#" class=""><i class="fa fa-tachometer text-white text-center" style="color:#FFFFFF; width:6; height:6;"></i></a> </li>
+                            <li class="nav-item my-md-0 my-lg-1 my-xl-2"> <a href="#" class=""><i class="fa fa-plus text-white text-center" style="color:#FFFFFF; width:6; height:6;"></i></a> </li>
+                            <li class="nav-item my-md-0 my-lg-1 my-xl-2"> <a href="#" class=""><i class="fa fa-user text-white text-center" style="color:#FFFFFF; width:6; height:6;"></i></a> </li>
+                            <li class="nav-item my-md-0 my-lg-1 my-xl-2"> <a href="#" class=""><i class="fa fa-comments text-white text-center" style="color:#FFFFFF; width:6; height:6;"></i></a> </li>
+                            <li class="nav-item my-md-0 my-lg-1 my-xl-2"> <a href="#" class=""><i class="fa fa-cog text-white text-center" style="color:#FFFFFF; width:6; height:6;"></i></a> </li>
+                            <li class="nav-item mt-4"> <a href="#" class=""><i class="fas fa-sign-out-alt text-white text-center" style="color:#FFFFFF; width:6; height:6;"></i></a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="D nav-bar-mobile" class="containernav d-md-none d-lg-none d-xl-none fixed-bottom">
+                <input type="checkbox" id="btn-mas">
+                <div class="redes">
+                    <a href="#" class="fa fa-tachometer"></a>
+                    <a href="#" class="fa fa-comments"></a>
+                    <a href="#" class="fa fa-cog"></a>
+                    <a href="#" class="fa fa-sign-out"></a>
+                    <style type="text/css">
+                    * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                    }
+
+                    #btn-mas {
+                        display: none;
+                    }
+
+                    .containernav {
+                        position: fixed;
+                        bottom: 20px;
+                        right: 20px;
+                    }
+
+                    .redes a,
+                    .icon-mas2 {
+                        display: block;
+                        text-decoration: none;
+                        background: #097df9;
+                        color: #fff;
+                        width: 55px;
+                        height: 55px;
+                        line-height: 55px;
+                        text-align: center;
+                        border-radius: 50%;
+                        box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+                        transition: all 500ms ease;
+
+                    }
+
+                    .redes a:hover {
+                        background: #fff;
+                        color: #097df9;
+                    }
+
+                    .redes a {
+                        margin-bottom: -15px;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+
+                    #btn-mas:checked~.redes a {
+                        margin-bottom: 10px;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+
+                    .icon-mas2 {
+                        cursor: pointer;
+                        background: #097df9;
+                        font-size: 23px;
+                        margin-left: 0px;
+                    }
+
+                    #btn-mas:checked~.btn-mas .icon-mas2 {
+                        transform: rotate(137deg);
+                        font-size: 25px;
+                    }
+                    </style>
+                </div>
+                <div class="btn-mas">
+                    <label for="btn-mas" class="icon-mas2">
+                        <b>+</b></label>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+
+
+
+    </body>
+</html>
+
+{{end}}

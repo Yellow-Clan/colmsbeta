@@ -1,0 +1,28 @@
+{
+  "name": "SPWA lite",
+  "short_name": "SPWA lite",
+  "description": "...descripción...",
+  "start_url": "./index.html?utm=homescreen",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#A2FF00",
+  "theme_color": "#A2FF00",
+  "icons": [{
+      "src": "ico.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./images/icons/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+  }],
+  "author": {
+    "name": "LF",
+    "website": "",
+    "github": "",
+    "source-repo": ""
+  },
+  "gcm_sender_id": "847244712742",
+  "gcm_user_visible_only": true
+}
