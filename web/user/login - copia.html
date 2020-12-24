@@ -1,0 +1,84 @@
+{{define "user/loginformPage"}}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>GoLMS</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/2.2.1/mdb.min.css" rel="stylesheet" />
+</head>
+
+<body class=" justify-content-center align-items-center vh-100 " style="background-color: #EDECEC;">
+    <div class="container-fluid ">
+        <div class="row py-3">
+            <div id="A space" class="col-md-3"></div>
+            <div id="B MAIN" class="col-md-6 ">
+                <div id="A COLUMNA" class="py-4 mt-md-5 bg-white overflow-auto">
+                    <div id="B BODY" class="card-body my-5 py-5 px-5 bg-white">
+                        <!-- ENTRADA -->
+                        {{ . }}
+                        <div class="title">
+                            LOGIN
+                        </div>
+                        <form method="POST">
+                            <div class="field">
+                                <label class="label">Email</label>
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="Email" name="email" value="{{ .Data.Email }}" required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Password</label>
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="Password" name="password" value="{{ .Data.Password }}">
+                                </div>
+                            </div>
+                            <div class="field is-grouped">
+                                <div class="control">
+                                    <input type="submit" value="LogIn" class="button is-primary" />
+                                </div>
+                            </div>
+                        </form>
+                        <!-- SALIDA -->
+                    </div>
+                </div>
+            </div>
+            <div id="C space" class="col-md-1">
+            </div>
+            <div id="D NAV" class="col-md-1 ml-3 mt-md-0 mt-lg-3 mt-xl-5 px-sm-0 px-md-0 px-lg-2 px-xl-3 px-xxl-4 d-none d-md-block align-items-center" id="sticky-sidebar ">
+                <style type="text/css">
+                .sticky-top {
+                    top: 20px;
+                }
+                </style>
+                <div class="sticky-top mt-md-1 ">
+                    <div class=" flex-column bg-primary py-1" style="margin-left:auto; margin-right:auto; font-size: 80%; border-radius: 20px; box-shadow: -10px 14px 15px rgba(0,0,0,0.5);">
+                        <ul class="nav list-group fa-2x  my-md-4 my-lg-4 py-lg-2 py-xl-2 " style="box-shadow: none; padding: inherit;">
+                            <li class="nav-item btn mb-md-4" style="box-shadow: none; padding: inherit;"> <a href="/" class=""><img class="imagen" width="35" heigth="35" src="https://lh3.googleusercontent.com/-uJ5cwB9OVt0/X80cTH4WfrI/AAAAAAAAAXA/4EXJhNOMFY4kFTfB6LyYxG373sgtvSdIwCNcBGAsYHQ/w945-h600-p-k-no-nu/wmmm%2Blogo.png"></a> </li>
+                            <li class="nav-item btn my-md-0 my-md-0 my-lg-1 my-xl-2" style="box-shadow: none; padding: inherit;"> <a href="" class=""><i class="fas fa-tachometer-alt text-white text-center fa-2x" style="color:#FFFFFF; width:6; height:6;"></i></a> </li>
+                            <li class="nav-item btn my-md-0 my-md-0 my-lg-1 my-xl-2" style="box-shadow: none; padding: inherit;"> <a href="" class=""><i class="fa fa-plus text-white text-center fa-2x" style="color:#FFFFFF; width:6; height:6;"></i></a> </li>
+                            <li class="nav-item btn my-md-0 my-md-0 my-lg-1 my-xl-2" style="box-shadow: none; padding: inherit;"> <a href="#" class=""><i class="fa fa-user text-white text-center fa-2x" style="color:#FFFFFF; width:6; height:6;"></i></a> </li>
+                            <li class="nav-item btn my-md-0 my-md-0 my-lg-1 my-xl-2" style="box-shadow: none; padding: inherit;"> <a href="#" class=""><i class="fa fa-comments text-white text-center fa-2x" style="color:#FFFFFF; width:6; height:6;"></i></a> </li>
+                            <li class="nav-item btn my-md-0 my-md-0 my-lg-1 my-xl-2" style="box-shadow: none; padding: inherit;"> <a href="#" class=""><i class="fa fa-cog text-white text-center fa-2x" style="color:#FFFFFF; width:6; height:6;"></i></a> </li>
+                            <li class="nav-item btn mt-4" style="box-shadow: none; padding: inherit;"> <a href="/logout" class=""><i class="fas fa-sign-out-alt text-white text-center fa-2x" style="color:#FFFFFF; width:6; height:6;"></i></a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/2.2.1/mdb.min.js"></script>
+</body>
+
+</html>
+{{end}}

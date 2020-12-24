@@ -15,65 +15,166 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/2.2.1/mdb.min.css" rel="stylesheet" />
-    
 </head>
 
 <body class=" justify-content-center align-items-center vh-100 " style="background-color: #EDECEC;">
     <div class="container-fluid ">
         <div class="row py-3">
-
             <div id="A space" class="col-md-3"></div>
-
             <div id="B MAIN" class="col-md-6 ">
-                
-            
-
-                     
-                        <div id="A COLUMNA" class="py-4 mt-md-5 bg-white overflow-auto"> 
-
-                            <div id="B BODY" class="card-body my-5 py-5 px-5 bg-white"> 
+                <div id="A COLUMNA" class="py-4 mt-md-5 bg-white overflow-auto">
+                    <div id="B BODY" class="card-body my-5 py-5 px-5 bg-white">
 
 
-                                    <!-- <a href="#"><div id="C TAB" class="card-body row bg-white mb-md-3 shadow">
-                                    <button type="button" class="btn btn-lg col-7 text-primary shadow-0">HOME</button>
-                                    <button type="button" onclick="location.href='/example.com'" class="btn btn-danger btn-lg col-5">ADMINISTRAR</button>
-                                    </div></a> -->
-                                            <!-- LINKS -->
+                        <!-- ENTRADA -->
+<section class="border p-4 d-flex justify-content-center mb-4">
+        <div style="width: 26rem">
+          <!-- Pills navs -->
+          <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="true">Login</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="tab-register" data-mdb-toggle="pill" href="user/form" role="tab" aria-controls="pills-register" aria-selected="false">Registro</a>
+            </li>
+          </ul>
+          <!-- Pills navs -->
 
-                                        <!-- 1 -->
-                                    <a href="#"><div id="C TAB" class="card-body row bg-white mb-md-3 shadow">
-                                    <button type="button" onclick="location.href='/login'" class="btn btn-lg col-7 text-primary shadow-0">LOGIN</button>
-                                    <button type="button" onclick="location.href='/user/index'" class="btn btn-danger btn-lg col-5">AGREGAR</button>
-                                    </div></a>
-                                        <!-- 2 -->
-                                    <a href="#"><div id="C TAB" class="card-body row bg-white mb-md-3 shadow">
-                                    <button type="button" onclick="location.href='/employee/index'" class="btn btn-lg col-7 text-primary shadow-0">EMPLOYEE</button>
-                                    <button type="button" onclick="location.href='/employee/form'" class="btn btn-danger btn-lg col-5">AGREGAR</button>
-                                    </div></a>
-                                    <!-- 3 -->
-                                    <a href="#"><div id="C TAB" class="card-body row bg-white mb-md-3 shadow">
-                                    <button type="button" onclick="location.href='/alumno/index'" class="btn btn-lg col-7 text-primary shadow-0">ALUMNO</button>
-                                    <button type="button" onclick="location.href='/alumno/form'" class="btn btn-danger btn-lg col-5">AGREGAR</button>
-                                    </div></a>
-                                    <!-- 4 -->
-                                    <a href="#"><div id="C TAB" class="card-body row bg-white mb-md-3 shadow">
-                                    <button type="button" onclick="location.href='/matricula/index'" class="btn btn-lg col-7 text-primary shadow-0">MATRICULA</button>
-                                    <button type="button" onclick="location.href='/matricula/form'" class="btn btn-danger btn-lg col-5">AGREGAR</button>
-                                    </div></a>
-                                    <!-- 5 -->
-                                    <a href="#"><div id="C TAB" class="card-body row bg-white mb-md-3 shadow">
-                                    <button type="button" onclick="location.href='/user/index'" class="btn btn-lg col-7 text-primary shadow-0">USUARIOS</button>
-                                    <button type="button" onclick="location.href='/user/form'" class="btn btn-danger btn-lg col-5">AGREGAR</button>
-                                    </div></a>
-                                     <!-- 6 -->
-                                    <a href="#"><div id="C TAB" class="card-body row bg-white mb-md-3 shadow">
-                                    <button type="button" onclick="location.href='/rol/index'" class="btn btn-lg col-7 text-primary shadow-0">Rol</button>
-                                    <button type="button" onclick="location.href='/rol/form'" class="btn btn-danger btn-lg col-5">AGREGAR</button>
-                                    </div></a>
+          <!-- Pills content -->
+          <div class="tab-content">
+            <div class="tab-pane fade active show" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+            <form>
+                <div class="text-center mb-3">
+                  <p>Ingresar con:</p>
+                  <button type="button" class="btn btn-primary btn-floating mx-1">
+                    <i class="fab fa-facebook-f"></i>
+                  </button>
 
-                                    <!-- FIN LINKS -->
+                  <button type="button" class="btn btn-primary btn-floating mx-1">
+                    <i class="fab fa-google"></i>
+                  </button>
 
-<!-- 
+                  <button type="button" class="btn btn-primary btn-floating mx-1">
+                    <i class="fab fa-twitter"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-primary btn-floating mx-1">
+                    <i class="fab fa-github"></i>
+                  </button>
+                </div>
+
+                <p class="text-center">O con cuenta:</p>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="email" id="loginName" class="form-control">
+                  <label class="form-label" for="loginName" style="margin-left: 0px;">Email o cuenta</label>
+                <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 114.4px;"></div><div class="form-notch-trailing"></div></div><div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 114.4px;"></div><div class="form-notch-trailing"></div></div><div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 92.8px;"></div><div class="form-notch-trailing"></div></div></div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input type="password" id="loginPassword" class="form-control">
+                  <label class="form-label" for="loginPassword" style="margin-left: 0px;">Password</label>
+                <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 64.8px;"></div><div class="form-notch-trailing"></div></div><div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 64.8px;"></div><div class="form-notch-trailing"></div></div><div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 64px;"></div><div class="form-notch-trailing"></div></div></div>
+
+                <!-- 2 column grid layout -->
+                <div class="row mb-4">
+                  <div class="col-md-6 d-flex justify-content-center">
+                    <!-- Checkbox -->
+                    <div class="form-check mb-3 mb-md-0">
+                      <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked="">
+                      <label class="form-check-label" for="loginCheck"> Recuerdame </label>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 d-flex justify-content-center">
+                    <!-- Simple link -->
+                    <a href="#!">Contraseña olvidada?</a>
+                  </div>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">Ingresar</button>
+
+                <!-- Register buttons -->
+                <div class="text-center">
+                  
+                </div>
+            </form>
+
+
+            </div>
+            <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
+              <form>
+                <div class="text-center mb-3">
+                  <p>Sign up with:</p>
+                  <button type="button" class="btn btn-primary btn-floating mx-1">
+                    <i class="fab fa-facebook-f"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-primary btn-floating mx-1">
+                    <i class="fab fa-google"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-primary btn-floating mx-1">
+                    <i class="fab fa-twitter"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-primary btn-floating mx-1">
+                    <i class="fab fa-github"></i>
+                  </button>
+                </div>
+
+                <p class="text-center">or:</p>
+
+                <!-- Name input -->
+                <div class="form-outline mb-4">
+                  <input type="text" id="registerName" class="form-control">
+                  <label class="form-label" for="registerName" style="margin-left: 0px;">Name</label>
+                <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 42.4px;"></div><div class="form-notch-trailing"></div></div><div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 8px;"></div><div class="form-notch-trailing"></div></div><div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 8px;"></div><div class="form-notch-trailing"></div></div></div>
+
+                <!-- Username input -->
+                <div class="form-outline mb-4">
+                  <input type="text" id="registerUsername" class="form-control">
+                  <label class="form-label" for="registerUsername" style="margin-left: 0px;">Username</label>
+                <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 66.4px;"></div><div class="form-notch-trailing"></div></div><div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 8px;"></div><div class="form-notch-trailing"></div></div><div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 8px;"></div><div class="form-notch-trailing"></div></div></div>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="email" id="registerEmail" class="form-control">
+                  <label class="form-label" for="registerEmail" style="margin-left: 0px;">Email</label>
+                <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 40px;"></div><div class="form-notch-trailing"></div></div><div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 8px;"></div><div class="form-notch-trailing"></div></div><div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 8px;"></div><div class="form-notch-trailing"></div></div></div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input type="password" id="registerPassword" class="form-control">
+                  <label class="form-label" for="registerPassword" style="margin-left: 0px;">Password</label>
+                <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 64.8px;"></div><div class="form-notch-trailing"></div></div><div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 8px;"></div><div class="form-notch-trailing"></div></div><div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 8px;"></div><div class="form-notch-trailing"></div></div></div>
+
+                <!-- Repeat Password input -->
+                <div class="form-outline mb-4">
+                  <input type="password" id="registerRepeatPassword" class="form-control">
+                  <label class="form-label" for="registerRepeatPassword" style="margin-left: 0px;">Repeat password</label>
+                <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 106.4px;"></div><div class="form-notch-trailing"></div></div><div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 8px;"></div><div class="form-notch-trailing"></div></div><div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 8px;"></div><div class="form-notch-trailing"></div></div></div>
+
+                <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-center mb-4">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked="" aria-describedby="registerCheckHelpText">
+                  <label class="form-check-label" for="registerCheck">
+                    I have read and agree to the terms
+                  </label>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-3">Sign in</button>
+              </form>
+            </div>
+          </div>
+          <!-- Pills content -->
+        </div>
+      </section>
+                        <!-- FIN ENTRADA -->
+                        <!-- 
                                     <a href="#"><div id="C TAB" class="card-body row bg-white mb-md-3 shadow">
                                     <button type="button" class="btn btn-lg col-7 text-primary shadow-0">ALUMNOS</button>
                                     <button type="button" onclick="location.href='/example.com'" class="btn btn-danger btn-lg col-5">ADMINISTRAR</button>
@@ -95,26 +196,11 @@
                                     <button type="button" onclick="location.href='/example.com'" class="btn btn-danger btn-lg col-5">ADMINISTRAR</button>
                                     </div></a>
   -->
-
-                                
-                            </div>
-
-
-                        </div>
-
-
-
-
-                   
-
-                
-
+                    </div>
+                </div>
             </div>
-
-
             <div id="C space" class="col-md-1">
             </div>
-
             <div id="D NAV" class="col-md-1 ml-3 mt-md-0 mt-lg-3 mt-xl-5 px-sm-0 px-md-0 px-lg-2 px-xl-3 px-xxl-4 d-none d-md-block align-items-center" id="sticky-sidebar ">
                 <style type="text/css">
                 .sticky-top {
@@ -135,7 +221,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- <div id="D nav-bar-mobile" class="containernav d-md-none d-lg-none d-xl-none fixed-bottom">
            <input type="checkbox" id="btn-mas">
             <div class="redes">
@@ -158,7 +243,6 @@
     </div>
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/2.2.1/mdb.min.js"></script>
-
 </body>
 
 </html>
