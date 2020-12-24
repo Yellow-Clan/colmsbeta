@@ -27,9 +27,9 @@ func RolList(w http.ResponseWriter, req *http.Request) {
 
 	for _, lis := range roles {
 		fmt.Println(lis.ToString())
-		fmt.Println("Usuarios: ", len(lis.Usuarios))
-		if len(lis.Usuarios) > 0 {
-			for _, d := range lis.Usuarios {
+		fmt.Println("Personas: ", len(lis.Personas))
+		if len(lis.Personas) > 0 {
+			for _, d := range lis.Personas {
 				fmt.Println(d.ToString())
 				fmt.Println("=============================")
 			}
@@ -73,9 +73,9 @@ func RolForm(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method == "POST" {
 		log.Printf("POST id=: %v", id)
-		d.Nombres = r.FormValue("nombres")
+		d.Nombre = r.FormValue("nombre")
 		d.Codigo = r.FormValue("codigo")
-		d.Email = r.FormValue("email")
+
 		if id != "" {
 			if err := cfig.DB.Save(&d).Error; err != nil {
 				http.Error(w, err.Error(), http.StatusInternalServerError)

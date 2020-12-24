@@ -8,15 +8,15 @@ import (
 )
 
 type Rol struct {
-	Id       string `gorm:"primaryKey;"`
-	Nombres  string
-	Codigo   string
-	Email    string `gorm:"type:varchar(100);unique_index"`
-	Usuarios []Usuario
+	Id     string `gorm:"primaryKey;"`
+	Nombre string
+	Codigo string
+
+	Personas []Persona
 }
 
 func (tab Rol) ToString() string {
-	return tab.Nombres
+	return tab.Nombre
 }
 
 func (tab *Rol) BeforeCreate(*gorm.DB) error {
@@ -26,7 +26,7 @@ func (tab *Rol) BeforeCreate(*gorm.DB) error {
 
 func (rol Rol) FindAll(conn *gorm.DB) ([]Rol, error) {
 	var roles []Rol
-	if err := conn.Preload("Usuarios").Find(&roles).Error; err != nil {
+	if err := conn.Preload("Personas").Find(&roles).Error; err != nil {
 		return nil, err
 	}
 	return roles, nil

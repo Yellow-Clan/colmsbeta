@@ -1,0 +1,56 @@
+{{define "persona/formPage"}}
+
+{{ template "Header" }}
+{{ template "Menu" }} 
+{{ .Data.Id  }}
+
+<div class="title">
+  {{if .IsEdit }}Update{{else}}Create{{end}} 
+</div>
+ 
+
+<form method="POST">
+  <input type="hidden" name="id" value="{{ .Data.Id }}" />
+  <div class="field">
+    <label class="label">Semestre</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="Semestre" name="semestre" value="{{ .Data.Semestre }}" required>
+    </div>
+  </div>
+
+<form method="POST">
+  <input type="hidden" name="id" value="{{ .Data.Id }}" />
+  <div class="field">
+    <label class="label">Email</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="Email" name="email" value="{{ .Data.Email }}" required>
+    </div>
+  </div>
+
+
+  <div class="field">
+    <label class="label">Rol</label>
+    <div class="control">
+      <div class="select">
+        <select name="rol_id" required> // for loop in html template example
+          <option  value="" >Elija un Rol</option>
+          {{range $key, $value := .Roles}}
+            <option value="{{ $value.Id }}" {{if eq $value.Id $.Data.RolId }}selected="selected"{{end}}>{{ $value.Nombre }}</option>
+          {{end}}
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="field is-grouped">
+    <div class="control">
+      <input type="submit" value="Save " class="button is-primary"/>
+    </div>
+    
+  </div>
+
+
+
+</form><br />    
+{{ template "Footer" }}
+{{end}}

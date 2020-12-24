@@ -45,7 +45,8 @@ func main() {
 		&models.Matricula{},
 
 		&models.Rol{},
-		&models.Usuario{},
+
+		&models.Persona{},
 
 		&models.User{})
 	//cfig.DB.Create(&models.Empleado{Name: "Juan", City: "Juliaca"})

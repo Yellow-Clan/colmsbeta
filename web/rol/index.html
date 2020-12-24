@@ -11,7 +11,7 @@
   <thead>
   <tr>
     <td>#</td>
-    <td>Rol</td>
+    <td>Nombre</td>
     <td>Codigo</td>
     <td>View</td>
     <td>Edit</td>
@@ -22,9 +22,9 @@
   {{ range $i, $d := .Widgets  }}
     <tr>
       <td>{{ inc $i }} </td>
-      <td> {{ $d.Nombres }} </td>
-      <td>{{ $d.Codigo }} </td> 
 
+      <td> {{ $d.Nombre }} </td>
+      <td>{{ $d.Codigo }} </td> 
       <td><a href="../rol/show?id={{ $d.Id }}">View</a></td>
       <td><a href="../rol/form?id={{ $d.Id }}">Edit</a></td>
       <td><a href="../rol/delete?id={{ $d.Id }}" onclick="return confirm('Are you sure?');">Delete</a></td>
